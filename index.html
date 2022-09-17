@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Advance</title>
+</head>
+<body>
+    <div class="container">
+        <div class="tab tab-1">
+            <table id="table" border="1">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Totalsalary</th>
+                    <th>Action</th>
+                    <!-- <td>
+                        <a onclick="del()" href="#">Delete</a>
+                    </td> -->
+                </tr>
+
+            </table>
+            <div class="tab tab-2">
+                 Id :<input typ="text" name="Id" id="Id">
+                 Name :<input typ="text" name="Name" id="Name">
+                 Totalsalary:<input typ="text" name="Totalsalary" id="Totalsalary">
+                <button onclick="addHtmlTableRow();">Add</button>
+        </div>
+    </div>
+    <style>
+        .container{
+            overflow: hidden;
+        }
+        .tab{
+            float:left;
+        }
+        .tab-2{
+            margin-left: 50px;
+        }
+        .tab-2 input{ display: block;
+            margin-bottom: 10px;
+            
+        }
+
+        
+            
+        
+            
+        
+    </style>
+   
+   
+   
+ 
+    
+</body>
+<script>
+    // add ROW
+    function addHtmlTableRow()
+    {
+        // GET THE TABLE bY ID
+        // create a new row and cells
+        
+        var table = document.getElementById("table"),
+        newRow = table.insertRow(table.length),
+        cell1 = newRow.insertCell(0),
+        cell2 = newRow.insertCell(1),
+        cell3 = newRow.insertCell(2),
+        cell4 = newRow.insertCell(3),
+        Id = document.getElementById("Id").value,
+        Name = document.getElementById("Name").value,
+        Totalsalary = document.getElementById("Totalsalary").value;
+
+        
+        cell1.innerHTML=Id;
+       
+        
+        cell2.innerHTML = Name ;
+        cell3.innerHTML =Totalsalary ;
+        cell4.innerHTML="<button onclick = del()>Delete</button>";
+
+        console.log(cell1);
+
+        SelectedRowToInput();
+
+    }
+    function SelectedRowToInput(){
+        var rIndex , table = document.getElementById("table");
+        for (var i = 1; i < table.rows.length; i++)
+        {
+            table.rows[i].onclick = function()
+            {
+                rIndex = this.rowIndex ;
+                console.log(rIndex);
+            };
+        }
+        
+
+
+
+    }
+
+    SelectedRowToInput();
+    function del(){
+        
+
+
+    }
+    
+
+
+    
+</script>
+
+
+   
+    
+   
+    
+
+
+
+</script>
+
+</html>
